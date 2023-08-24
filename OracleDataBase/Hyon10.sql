@@ -1,50 +1,50 @@
 CREATE TABLE TB1(NAME VARCHAR2(20), AGE NUMBER(3));
 CREATE TABLE TB2(NAME VARCHAR2(20), AGE NUMBER(3));
   
---INSERT INTO TB1 VALUES('±èºñ¹ö',30);
---INSERT INTO TB1 VALUES('¹Úºñ¹ö',35);
---INSERT INTO TB1 VALUES('ÃÖºñ¹ö',40);
---INSERT INTO TB1 VALUES('¿Àºñ¹ö',40);
+--INSERT INTO TB1 VALUES('ê¹€ë¹„ë²„',30);
+--INSERT INTO TB1 VALUES('ë°•ë¹„ë²„',35);
+--INSERT INTO TB1 VALUES('ìµœë¹„ë²„',40);
+--INSERT INTO TB1 VALUES('ì˜¤ë¹„ë²„',40);
 --
---INSERT INTO TB2 VALUES('±èºñ¹ö',30);
---INSERT INTO TB2 VALUES('ÀÌºñ¹ö',50);
---INSERT INTO TB2 VALUES('Á¤ºñ¹ö',55);
+--INSERT INTO TB2 VALUES('ê¹€ë¹„ë²„',30);
+--INSERT INTO TB2 VALUES('ì´ë¹„ë²„',50);
+--INSERT INTO TB2 VALUES('ì •ë¹„ë²„',55);
 
---CROSS JOIN : º°µµÀÇ Á¶°Ç ¾øÀÌ µÎ Å×ÀÌºí °£ÀÇ °¡´ÉÇÑ ¸ðµç °á°ú¸¦ Á¶È¸(¸ðµç °æ¿ìÀÇ ¼ö)
---»ç½Ç»ó ¾È¾²´Â Á¶ÀÎ
+--CROSS JOIN : ë³„ë„ì˜ ì¡°ê±´ ì—†ì´ ë‘ í…Œì´ë¸” ê°„ì˜ ê°€ëŠ¥í•œ ëª¨ë“  ê²°ê³¼ë¥¼ ì¡°íšŒ(ëª¨ë“  ê²½ìš°ì˜ ìˆ˜)
+--ì‚¬ì‹¤ìƒ ì•ˆì“°ëŠ” ì¡°ì¸
 SELECT * FROM TB1, TB2;
 SELECT * FROM TB1 CROSS JOIN TB2;
 
---INNER JOIN: Á¶°Ç¿¡ ÇØ´çÇÏ´Â °ª¸¸ ³ª¿È
+--INNER JOIN: ì¡°ê±´ì— í•´ë‹¹í•˜ëŠ” ê°’ë§Œ ë‚˜ì˜´
 SELECT * FROM TB1 INNER JOIN TB2 ON tb1.name = tb2.name;
-SELECT * FROM TB1 A, TB2 B WHERE a.name = b.name; --EQUI Á¶ÀÎ(µ¿µîÁ¶ÀÎ) 
-SELECT * FROM TB1 JOIN TB2 USING (NAME); --JOIN~USING(Á¶ÀÎ´ë»óÄÃ·³¸í)
-SELECT * FROM TB1 NATURAL JOIN TB2; --ÀÚ¿¬Á¶ÀÎ,Á¶°ÇÀý ¾øÀÌ ¾çÂÊ¿¡ °°Àº °¡Áø ÄÃ·³¸¸ Á¶È¸
+SELECT * FROM TB1 A, TB2 B WHERE a.name = b.name; --EQUI ì¡°ì¸(ë™ë“±ì¡°ì¸) 
+SELECT * FROM TB1 JOIN TB2 USING (NAME); --JOIN~USING(ì¡°ì¸ëŒ€ìƒì»¬ëŸ¼ëª…)
+SELECT * FROM TB1 NATURAL JOIN TB2; --ìžì—°ì¡°ì¸,ì¡°ê±´ì ˆ ì—†ì´ ì–‘ìª½ì— ê°™ì€ ê°€ì§„ ì»¬ëŸ¼ë§Œ ì¡°íšŒ
 
---OUTER JOIN: ±âÁØ Å×ÀÌºíÀÇ µ¥ÀÌÅÍ°¡ ¸ðµÎ Á¶È¸(´©¶ô ¾øÀÌ) µÇ°í
---´ë»ó Å×ÀÌºí¿¡ µ¥ÀÌÅÍ°¡ ÀÖÀ» °æ¿ì ÇØ´ç ÄÃ·³ÀÇ °ªÀ» °¡Á®¿À±â À§ÇØ¼­ »ç¿ë
--- (+)¸¦ ÀÌ¿ëÇÑ OUTER JOIN: NULLÀÌ Ãâ·ÂµÇ´Â Å×ÀÌºíÀÇ ÄÃ·³¿¡ (+) ±âÈ£ Ãß°¡
+--OUTER JOIN: ê¸°ì¤€ í…Œì´ë¸”ì˜ ë°ì´í„°ê°€ ëª¨ë‘ ì¡°íšŒ(ëˆ„ë½ ì—†ì´) ë˜ê³ 
+--ëŒ€ìƒ í…Œì´ë¸”ì— ë°ì´í„°ê°€ ìžˆì„ ê²½ìš° í•´ë‹¹ ì»¬ëŸ¼ì˜ ê°’ì„ ê°€ì ¸ì˜¤ê¸° ìœ„í•´ì„œ ì‚¬ìš©
+-- (+)ë¥¼ ì´ìš©í•œ OUTER JOIN: NULLì´ ì¶œë ¥ë˜ëŠ” í…Œì´ë¸”ì˜ ì»¬ëŸ¼ì— (+) ê¸°í˜¸ ì¶”ê°€
 
--- LEFT OUTER JOIN: ¿ÞÂÊ Å×ÀÌºí¿¡ °ªÀÌ ÀÖÀ»¶§ ¿À¸¥ÂÊ Å×ÀÌºíÀÌ Á¶°Ç¿¡ ¸ÂÁö ¾Ê¾Æµµ ³ª¿È
---      (Á¶°Ç¿¡ ¸ÂÁö ¾ÊÀ¸¸é NULL·Î ¸Þ²Þ)
+-- LEFT OUTER JOIN: ì™¼ìª½ í…Œì´ë¸”ì— ê°’ì´ ìžˆì„ë•Œ ì˜¤ë¥¸ìª½ í…Œì´ë¸”ì´ ì¡°ê±´ì— ë§žì§€ ì•Šì•„ë„ ë‚˜ì˜´
+--      (ì¡°ê±´ì— ë§žì§€ ì•Šìœ¼ë©´ NULLë¡œ ë©”ê¿ˆ)
 SELECT * FROM TB1 LEFT OUTER JOIN TB2 ON tb1.name = tb2.name;
 SELECT * FROM TB1, TB2 WHERE tb1.name = tb2.name(+);
 
--- RIGHT OUTER JOIN: ¿À¸¥¦U Å×ÀÌºí¿¡ °ªÀÌ ÀÖÀ»¶§ ¿ÞÂÊ Å×ÀÌºíÀÌ Á¶°Ç¿¡ ¸ÂÁö ¾Ê¾Æµµ ³ª¿È
---      (Á¶°Ç¿¡ ¸ÂÁö ¾ÊÀ¸¸é NULL·Î ¸Þ²Þ)
+-- RIGHT OUTER JOIN: ì˜¤ë¥¸U í…Œì´ë¸”ì— ê°’ì´ ìžˆì„ë•Œ ì™¼ìª½ í…Œì´ë¸”ì´ ì¡°ê±´ì— ë§žì§€ ì•Šì•„ë„ ë‚˜ì˜´
+--      (ì¡°ê±´ì— ë§žì§€ ì•Šìœ¼ë©´ NULLë¡œ ë©”ê¿ˆ)
 SELECT * FROM TB1 RIGHT OUTER JOIN TB2 ON tb1.name=tb2.name;
 SELECT * FROM TB1, TB2 WHERE tb1.name(+) = tb2.name;
 
--- FULL OUTER JOIN : ÇÑÂÊ Å×ÀÌºí¿¡ °ªÀÌ ÀÖÀ» ¶§ ´Ù¸¥ÂÊ Å×ÀÌºíÀÌ Á¶°Ç¿¡ ¸ÂÁö ¾Ê¾Æµµ ³ª¿È
+-- FULL OUTER JOIN : í•œìª½ í…Œì´ë¸”ì— ê°’ì´ ìžˆì„ ë•Œ ë‹¤ë¥¸ìª½ í…Œì´ë¸”ì´ ì¡°ê±´ì— ë§žì§€ ì•Šì•„ë„ ë‚˜ì˜´
 SELECT * FROM TB1 FULL OUTER JOIN TB2 ON tb1.name=tb2.name;
 
---SELF JOIN ** Çò°¥¸²
---ÇÏ³ªÀÇ Å×ÀÌºí ³»¿¡ ÀÖ´Â ÄÃ·³³¢¸® ¿¬°áÇÏ´Â Á¶ÀÎÀÌ ÇÊ¿äÇÑ °æ¿ì
+--SELF JOIN ** í—·ê°ˆë¦¼
+--í•˜ë‚˜ì˜ í…Œì´ë¸” ë‚´ì— ìžˆëŠ” ì»¬ëŸ¼ë¼ë¦¬ ì—°ê²°í•˜ëŠ” ì¡°ì¸ì´ í•„ìš”í•œ ê²½ìš°
 
---ÇÑ À¥»çÀÌÆ®¿¡ È¸¿øÀÌ 5¸íÀÌ ÀÖ°í °ü¸®ÀÚ°¡ 2¸íÀÌ ÀÖÀ½
---È¸¿øÀÇ ÀÌ¸§Àº °¢°¢ È¸¿ø1~5 / °ü¸®ÀÚÀÇ ÀÌ¸§ °ü¸®ÀÚ 1,2
---È¸¿øÀÇ ¾ÆÀÌµð´Â °¢°¢ MEMBER1~5 / °ü¸®ÀÚÀÇ ¾ÆÀÌµð´Â °¢°¢ MANAGER1,2
---È¸¿ø 1~3¹øÀº °ü¸®°¡ 1ÀÎ °ü¸® / ³ª¸ÓÁöÈ¸¿øÀº °ü¸®ÀÚ 2°¡ °ü¸®
+--í•œ ì›¹ì‚¬ì´íŠ¸ì— íšŒì›ì´ 5ëª…ì´ ìžˆê³  ê´€ë¦¬ìžê°€ 2ëª…ì´ ìžˆìŒ
+--íšŒì›ì˜ ì´ë¦„ì€ ê°ê° íšŒì›1~5 / ê´€ë¦¬ìžì˜ ì´ë¦„ ê´€ë¦¬ìž 1,2
+--íšŒì›ì˜ ì•„ì´ë””ëŠ” ê°ê° MEMBER1~5 / ê´€ë¦¬ìžì˜ ì•„ì´ë””ëŠ” ê°ê° MANAGER1,2
+--íšŒì› 1~3ë²ˆì€ ê´€ë¦¬ê°€ 1ì¸ ê´€ë¦¬ / ë‚˜ë¨¸ì§€íšŒì›ì€ ê´€ë¦¬ìž 2ê°€ ê´€ë¦¬
 
 CREATE TABLE web(
    me_id varchar2(8 char) primary key,
@@ -52,24 +52,21 @@ CREATE TABLE web(
    ma_id char(8 char) 
 );
 
-INSERT INTO web values('member1','È¸¿ø1','manager1');
-INSERT INTO web values('member2','È¸¿ø2','manager1');
-INSERT INTO web values('member3','È¸¿ø3','manager1');
-INSERT INTO web values('member4','È¸¿ø4','manager2');
-INSERT INTO web values('member5','È¸¿ø5','manager2');
-INSERT INTO web values('manager1','°ü¸®ÀÚ1',null);
-INSERT INTO web values('manager2','°ü¸®ÀÚ2',null);
+INSERT INTO web values('member1','íšŒì›1','manager1');
+INSERT INTO web values('member2','íšŒì›2','manager1');
+INSERT INTO web values('member3','íšŒì›3','manager1');
+INSERT INTO web values('member4','íšŒì›4','manager2');
+INSERT INTO web values('member5','íšŒì›5','manager2');
+INSERT INTO web values('manager1','ê´€ë¦¬ìž1',null);
+INSERT INTO web values('manager2','ê´€ë¦¬ìž2',null);
 
---ÀÌ Å×ÀÌºí ³»¿¡¼­ °¢ °ü¸®ÀÚ°¡ ¾î¶² È¸¿øÀ» °ü¸®ÇÏ´ÂÁö ¾Ë°í ½ÍÀ½
+--ì´ í…Œì´ë¸” ë‚´ì—ì„œ ê° ê´€ë¦¬ìžê°€ ì–´ë–¤ íšŒì›ì„ ê´€ë¦¬í•˜ëŠ”ì§€ ì•Œê³  ì‹¶ìŒ
 select * 
-from web A join web B 
+from web A inner join web B 
 on a.me_id=b.me_id;
 
-select A.me_id,A.me_name,b.ma_id
-from web A join web B 
+select A.me_id,B.me_name,B.me_id
+from web A inner join web B 
 on a.me_id = b.ma_id;
 
 
---select me_id,me_name,ma_id
---from web
---where ma_id in (select m_id from web);
