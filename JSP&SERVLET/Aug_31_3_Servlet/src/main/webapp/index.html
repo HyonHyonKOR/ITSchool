@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 페이지</title>
+    <style>
+      body {
+        margin: 20px;
+        height: 130vh;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      header:first-child {
+        width: 100%;
+        height: 10%;
+        border: solid 1px blueviolet;
+        align-items: flex-end;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+        padding: 2% 0%;
+        border: solid 1px cadetblue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1%;
+      }
+      .box {
+        width: 355px;
+        height: 70px;
+        border: solid 1px black;
+        display: flex;
+        align-items: flex-end;
+      }
+      .box__intro {
+        height: 10%;
+        border: solid 1px red;
+        display: flex;
+        font-family: fantasy;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+      }
+      .box__final {
+        height: 30%;
+        border: solid 1px red;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-size: 25px;
+      }
+      input {
+        width: 100%;
+        height: 60%;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+      }
+      .box__final input {
+        height: 80%;
+      }
+      .box__submit input {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="box box__intro">혁모와 함께라면 CSS도 간단!</div>
+      <div class="box box__id">
+        <input type="text" placeholder="아이디를 입력해주세요" />
+      </div>
+      <div class="box box__pw">
+        <input type="text" placeholder="비밀번호를 입력해주세요" />
+      </div>
+      <div class="box box__sex">
+        <input type="text" placeholder="성별을 선택해주세요" />
+      </div>
+      <div class="box box__area">
+        <input type="text" placeholder="거주하시는 지역을 선택해주세요" />
+      </div>
+      <div class="box box__final">
+        <input type="text" placeholder="원하시는 글을 입력해주세요" />
+      </div>
+      <div class="box box__submit">
+        <input type="submit" />
+      </div>
+    </main>
+  </body>
+</html>
