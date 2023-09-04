@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 - Hyon</title>
+  </head>
+  <body>
+    <div class="menu">
+      <span>개인 회원가입</span>
+    </div>
+    <header>
+      <h1>코딩은 구르면서 배우는거야!</h1>
+    </header>
+    <main>
+      <form action="SignInResult" method="post">
+        <div class="box__id">
+          <span>아이디</span>
+          <input type="text" name="ID" placeholder="필수,4~8자" />
+        </div>
+        <div class="box__password">
+          <span>비밀번호 </span>
+          <input type="password" name="PW" placeholder="필수,영문/숫자 혼합" />
+        </div>
+        <div class="box__sex">
+          <span>성별</span><br />
+          <div class="box__sex-radio">
+            <label>
+              <input name="GD" value="male" type="radio" />
+              남성
+            </label>
+            <label>
+              <input name="GD" value="female" type="radio" />
+              여성
+            </label>
+            <label>
+              <input name="GD" value="none" type="radio" />
+              밝히고 싶지 않음
+            </label>
+          </div>
+        </div>
+        <div class="box__area">
+          <span>지역</span>
+          <select name="box__area-select" id="LC">
+            <option value="Seoul">서울</option>
+            <option value="Gyounggi">경기</option>
+            <option value="Incheon">인천</option>
+            <option value="Kangwon">강원</option>
+            <option value="Choongbuk">충북</option>
+            <option value="Choongnam">충남</option>
+            <option value="Jeonbuk">전북</option>
+            <option value="Jeonnam">전남</option>
+            <option value="Kyoungbuk">경북</option>
+            <option value="Kyoungnam">경남</option>
+            <option value="Jeju">제주</option>
+          </select>
+        </div>
+        <div class="box__hobby">
+          <span>취미</span>
+          <input type="checkbox" name="HB" value="게임" />게임
+          <input type="checkbox" name="HB" value="골프" />골프
+          <input type="checkbox" name="HB" value="운동" />운동
+          <input type="checkbox" name="HB" value="SNS" />SNS
+          <input type="checkbox" name="HB" value="맛집탐방" />맛집탐방
+          <input type="checkbox" name="HB" value="방콕" />방콕
+        </div>
+        <div class="box__introduce">
+          <span>자기소개</span>
+          <textarea name="IND"></textarea>
+        </div>
+        <div class="box__submit">
+          <input type="submit" value="가입하기" />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

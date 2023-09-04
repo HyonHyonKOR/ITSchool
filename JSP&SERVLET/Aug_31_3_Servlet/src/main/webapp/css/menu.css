@@ -1,0 +1,8 @@
+.menu{
+    display: flex;
+    height: 65px;
+    padding: 0px 65px;
+    align-items: center;
+    font-size: 18px;
+    border-bottom: 1px solid whitesmoke;
+}
