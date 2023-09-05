@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make Table</title>
+    <style>
+     html{
+     height:100vh;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     }
+     body{
+     display:flex;
+     flex-direction: column;
+     align-items: center;
+     }
+     h1{
+     background-image: linear-gradient(90deg, red, orange, #F6CB01, green, blue, navy, purple);
+     -webkit-background-clip: text;
+     color: transparent;
+     font-size:3em;
+     }
+     button{
+     width:40%;
+     text-align:center;
+     margin-left:auto;
+     margin-right:auto;
+     height:50px;
+     font-size:20px;
+     font-family:sans-serif;
+     color:white;
+     font-weight:400px;
+     background-color:black;
+     transition: all linear 2s;
+     }
+     button:hover{
+     transform: rotateY(360deg);
+	}   
+	 button:active{
+     background-image: linear-gradient(90deg, red, orange, #F6CB01, green, blue, navy, purple);
+	}   
+	 
+    </style>
+    <script type="text/javascript">
+      function makeTable() {
+        let row = 0;
+        let column = 0;
+        let tdNum = 1;
+        let rowNum = 1;
+
+        let setRow = function () {
+          let input = String(prompt("행의 수를 입력해주세요"));
+          Number(input);
+          if (input <= 0||input==NaN) {
+            alert("행의 수는 0 이하가 될 수 없습니다. 다시 입력해주세요");
+            return setRow();
+          } else {
+            row = input;
+          }
+        };
+
+        setRow();
+
+        let setCol = function () {
+          let input2 = String(prompt("열의 수를 입력해주세요"));
+          Number(input2);
+          if (input2 <= 0 || input2==NaN) {
+            alert("열의 수는 0 이하가 될 수 없습니다. 다시 입력해주세요");
+            return setCol();
+          } else {
+            column = input2;
+          }
+        };
+
+        setCol();
+
+        document.write("<style>");
+        document.write("body{display:flex; justify-content:center;}");
+
+        document.write(
+          "table{display:flex; margin-top:10%; width:50% height:50%;}"
+        );
+        document.write(
+          "td{color:white; transition:all linear 0.5s;}"
+        );
+        document.write(
+                "table,td{color:white; border:1px solid white;}"
+              );
+        document.write("td:hover{transform: rotateZ(360deg) scale(1.5);}");
+        document.write("td:active{background-color:black; transform:rotateZ(-360deg)}");
+        document.write("</style>");
+
+        document.write("<table>");
+
+        for (let i = 0; i < row; i++) {
+          document.write("<tr>");
+          for (let j = 0; j < column; j++) {
+            switch (rowNum % 7) {
+              case 1: {
+                document.write("<td bgcolor='red' align='center'>");
+                break;
+              }
+              case 2: {
+                document.write("<td bgcolor='orange' align='center'>");
+                break;
+              }
+              case 3: {
+                document.write("<td bgcolor='#F6CB01' align='center'>");
+                break;
+              }
+              case 4: {
+                document.write("<td bgcolor='green' align='center'>");
+                break;
+              }
+              case 5: {
+                document.write("<td bgcolor='blue' align='center'>");
+                break;
+              }
+              case 6: {
+                document.write("<td bgcolor='navy' align='center'>");
+                break;
+              }
+              case 0: {
+                document.write("<td bgcolor='purple' align='center'>");
+                break;
+              }
+            }
+            document.write(tdNum);
+            document.write("</td>");
+            ++tdNum;
+          } //for
+          document.write("</tr>");
+          ++rowNum;
+        } //for
+        document.write("</table>");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Table with Numbers in a row</h1>
+    <button onclick="makeTable();">CREATE TABLE</button>
+    <!-- document.write() 메소드는 웹 페이지가 로딩될 때 실행되면,
+    먼저 로딩된 데이터를 지움! -->
+  </body>
+</html>

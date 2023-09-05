@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      let money = 0;
+
+      function plus100() {
+        money += 100;
+        console.log(money);
+        alert("현재 금액 : " + money + "원");
+      }
+      function plus500() {
+        money += 500;
+        console.log(money);
+        alert("현재 금액 : " + money + "원");
+      }
+      function plus1000() {
+        money += 1000;
+        console.log(money);
+        alert("현재 금액 : " + money + "원");
+      }
+      function minus(price) {
+        if (money < 0 || price > money) {
+          alert("잔액이 부족합니다.");
+          return;
+        }
+        money -= price;
+        alert("현재 금액" + money + "원");
+      }
+
+      function reset() {
+        console.log(money + "원이 환불됩니다.");
+        alert(money + "원이 환불됩니다.");
+        money = 0;
+        console.log("현재 금액" + money + 원);
+        alert("현재 금액" + money + "원");
+      }
+    </script>
+    <style>
+      .drink__row {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+      }
+      .drink__row div {
+        width: 20%;
+        height: 90%;
+        border: 1px solid black;
+      }
+      .drink__row div button {
+        background-color: white;
+        height: 300px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      #soju {
+        height: 50%;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div align="center">
+      🍻음🍻료🍻자🍻판🍻기🍻
+      <div class="drink__row">
+        <div>
+          <button onclick="minus(500);">
+            <img
+              src="https://img.danawa.com/prod_img/500000/830/939/img/10939830_1.jpg?_v=20200616103725"
+            /><span>500원</span>
+          </button>
+        </div>
+        <div>
+          <button onclick="minus(700);">
+            <img
+              src="https://img.danawa.com/prod_img/500000/926/122/img/13122926_1.jpg?shrink=500:*&_v=20220712135023"
+            />
+            <span>700원</span>
+          </button>
+        </div>
+        <div>
+          <button onclick="minus(1000);">
+            <img
+              src="https://img.danawa.com/prod_img/500000/384/956/img/1956384_1.jpg?shrink=500:*&_v=20180115154154"
+            />
+            <span>1000원</span>
+          </button>
+        </div>
+        <div>
+          <button onclick="minus(2000);">
+            <img
+              src="https://images.emarteveryday.co.kr/images/app/webapps/evd_web2/share/SKU/mall/19/10/8801119381019_1.png"
+            />
+            <span>2000원</span>
+          </button>
+        </div>
+        <div>
+          <button onclick="minus(2000);">
+            <img
+            src="https://www.shinailbo.co.kr/news/photo/202103/1388418_600911_747.png"
+            id="soju" / >
+            <span>3000원</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div align="center">
+      <button onclick="plus100();">100원</button>
+      <button onclick="plus500();">500원</button>
+      <button onclick="plus1000();">1000원</button>
+      <button onclick="reset();">돈빼기</button>
+    </div>
+  </body>
+</html>
