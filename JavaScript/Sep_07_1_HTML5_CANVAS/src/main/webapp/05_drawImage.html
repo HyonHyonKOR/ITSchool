@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function init(){
+		const canvas = document.getElementById("cv");
+		const ctx = canvas.getContext("2d");
+		
+		canvas.addEventListener("mousedown", function(me){
+			mDown(me);
+		}, false);
+		
+		canvas.addEventListener("mousemove", function(me){
+			mMove(me);
+		}, false);
+		
+		canvas.addEventListener("mouseup", function(me){
+			mUp(me);
+		}, false);
+		
+		canvas.addEventListener("mouseout", function(me){
+			mOut(me);
+		}, false);
+		
+		let stX=0;
+		let stY=0;
+		
+		//마우스를 캔버스에서 움직였을 때 그림 그리기 여부
+		let drag = false;
+		
+		function mDown(me){
+			stX = me.offsetX; //눌렀을때 마우스 X 좌표
+			stY = me.offsetY; //눌렀을때 마우스 Y 좌표
+			drag = true;
+		}
+		
+		function mMove(me){
+			if(!drag){
+				return;
+			}
+			
+			let nowX = me.offsetX;
+			let nowY = me.offsetY;
+			
+			//캔버스에서 그림을 그리는 부분
+			canvasDraw(nowX,nowY);
+			
+			stX= nowX;
+			stY= nowY;
+		}
+		
+		function canvasDraw(currentX, currentY){
+			ctx.beginPath();
+			ctx.lineWidth=10;
+			ctx.strokeStyle ="lightblue";
+			
+			ctx.moveTo(stX,stY);
+			ctx.lineTo(currentX,currentY);
+			ctx.stroke();
+		}
+		
+		function mUp(me){
+			drag = false;
+		}
+		
+		function mOut(me){
+			drag = false;
+		}
+		
+	}
+</script>
+</head>
+<body onload="init();">
+<canvas id="cv" width="600px" height="600px" style="border:black solid 3px;"></canvas>
+</body>
+</html>
