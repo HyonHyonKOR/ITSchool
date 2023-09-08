@@ -10,18 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="ValidCheck.js"></script>
     <script type="text/javascript" src="BMIValidCheck.js"></script>
-    <title>실행 결과</title>
-    <style>
-    {
-      main{
-      align-items: center;
-      flex-direction: column;
-      }
-      marquee{
-      font-size: 2em;
-      }
-    }
-    </style>
+    <title>BMI 결과</title>
   </head>
   <body>
   
@@ -35,11 +24,29 @@ double weight=patient.getWeight();
 double bmi =patient.getBmi();
 String status =patient.getStatus();
 
+String bmi2 = String.format("%.2f",bmi);
+
 patient.setPhoto(URLDecoder.decode(patient.getPhoto(),"UTF-8"));
 String photo = patient.getPhoto();
 
 
 %>
+    <style>
+		main{
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items:center;
+    	gap:20px;
+		}
+		img{
+    	width:330px;
+    	}
+   		h2{
+		font-size: 24px;
+		display: flex;
+		}
+    </style>
    <div class="box__menu">
       <span>체질량 지수(BMI) 계산</span>
     </div>
@@ -48,11 +55,11 @@ String photo = patient.getPhoto();
     </header>
     <main>
        <img src="img/<%=photo %>">
-       <h2>이름:<%=name %></h2>
-       <h2>신장:<%=height %></h2>
-       <h2>몸무게: <%=weight %></h2>
-       <h2>BMI: <%=bmi %></h2>
-	   <marquee>당신은 <%=status %> 입니다.</marquee> 
+       <h2>이름:&nbsp<%=name %></h2>
+       <h2>신장:&nbsp<%=height %>cm</h2>
+       <h2>몸무게:&nbsp<%=weight %>kg</h2>
+       <h2>BMI:&nbsp<%=bmi2 %></h2>
+	   <h1>당신은&nbsp<%=status %> 입니다.<h1>
 	   </main>
 </body>
 </html>
