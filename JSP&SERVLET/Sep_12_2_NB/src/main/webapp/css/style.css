@@ -1,0 +1,98 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@700&display=swap');
+
+body{
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	height:100vh;
+	display:flex;
+	justify-content: center;  
+	align-items: center;
+	
+}
+.nb__board{
+	display:grid;
+	grid-template-columns:50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+	grid-template-rows:50px 50px 50px 50px; 
+	grid-template-areas:
+	"a a a m m m m m m m" 
+	"a a a m m m m m m m"  
+	"a a a m m m m m m m"   
+	"a a a f f f f f f f"
+}
+aside{
+	grid-area:a;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+	align-items: center;
+	background-color: #28282B;
+}
+.aside__block{
+	width:150px;
+	height:25px;
+}
+.aside__block-baseball{
+	width:150px;
+	height:150px;
+	display:flex;
+	justify-content: center;  
+	align-items: center;
+	
+}
+.aside__block-baseball img{
+	width:100px;
+	height:100px;
+}
+.aside__block-text{
+	display:flex;
+	justify-content: center;  
+	align-items: flex-end;
+	font-size: 160%;
+	color:white;
+}
+
+.aside__block-rounds{
+	display:flex;
+	justify-content: center;  
+	align-items: flex-start;
+	font-weight: bold;
+	letter-spacing:1px;
+    color:#ECD574;
+    padding-bottom:15px;
+    font-family:sans-serif;
+}
+main{
+	background-color:green;
+	grid-area:m;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+	padding-left:10px;
+}
+.block{
+	display:flex;
+}
+.block-text{
+	width:50px;
+	height:50px;
+	background-color: yellow;
+	display:flex;
+	justify-content: center;  
+	align-items: center;
+	font-size:180%;
+	margin-right:10px;
+}
+.block-result{
+	width:50px;
+	height:50px;
+	background-color: pink;
+	display:flex;
+	justify-content: center;  
+	align-items: center;
+	font-size:180%;
+}
+footer{
+	background-color:blue;
+	grid-area:f;
+}
+
