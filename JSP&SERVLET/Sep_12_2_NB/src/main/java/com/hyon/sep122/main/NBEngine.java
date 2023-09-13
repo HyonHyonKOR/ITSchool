@@ -56,8 +56,8 @@ public class NBEngine {
 		}
 		
 		round++;
-		request.setAttribute("s",strike +"Strike!!");
-		request.setAttribute("b",ball + "ball!!");
+		request.setAttribute("s",strike +" STRIKE!");
+		request.setAttribute("b",ball + " BALL!");
 		request.setAttribute("r", round +"th Round");
 		request.setAttribute("c",comNum);
 		strike=0;

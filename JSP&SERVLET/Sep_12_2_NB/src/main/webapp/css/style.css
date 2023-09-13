@@ -12,7 +12,7 @@ body{
 .nb__board{
 	display:grid;
 	grid-template-columns:50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
-	grid-template-rows:50px 50px 50px 50px; 
+	grid-template-rows:50px 50px 60px 40px; 
 	grid-template-areas:
 	"a a a m m m m m m m" 
 	"a a a m m m m m m m"  
@@ -62,7 +62,7 @@ aside{
     font-family:sans-serif;
 }
 main{
-	background-color:green;
+	background-color:#28282B;
 	grid-area:m;
 	display:flex;
 	flex-direction:column;
@@ -75,24 +75,54 @@ main{
 .block-text{
 	width:50px;
 	height:50px;
-	background-color: yellow;
-	display:flex;
+	color:white;
+    display:flex;
 	justify-content: center;  
 	align-items: center;
 	font-size:180%;
 	margin-right:10px;
 }
 .block-result{
-	width:50px;
-	height:50px;
-	background-color: pink;
+	width:300px;
+	color:#ECD574;
 	display:flex;
-	justify-content: center;  
+	justify-content:flex-start; 
 	align-items: center;
 	font-size:180%;
 }
-footer{
-	background-color:blue;
-	grid-area:f;
+.block input{
+	height:80%;
+	width:60%;
+	border:solid 1px white;
+	border-radius: 10px;
+	background-color: #28282B;
+	color:white;
+	font-size:17px;
+	margin-right:20px;
 }
+button {
+border:solid 1px white;
+background-color:#38672E;
+color:white;	
+}
+.ff{
+	position:relative;
+}
+.ff button{
+	padding-left:19.8px;
+	right:-35px;
+	position:absolute;
+}
+.fo button{
+	top:-25px;
+	right:6.8px;
+	position:absolute;
+}
+footer{
+	background-color:#28282B;
+	grid-area:f;
+	position:relative;
+	color:#ECD574;
+}
+
 
