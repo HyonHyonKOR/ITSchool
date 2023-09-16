@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1 class="main-text">코딩은 구르면서 배우는거야옹😸 
-	<i class="fa-solid fa-music fa-bounce"></i>
-	</h1>
+ ${applecounter}
 </body>
 </html>

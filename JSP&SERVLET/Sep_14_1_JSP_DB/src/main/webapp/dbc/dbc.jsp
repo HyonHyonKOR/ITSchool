@@ -34,6 +34,6 @@
 		}
 		HyonDBManager.close(con, null, null);
 	%>
-	<h1><%=result %><i class="fa-solid fa-music fa-bounce"></i></h1>
+	<h1 class=main-text><%=result %><i class="fa-solid fa-music fa-bounce"></i></h1>
 </body>
 </html>

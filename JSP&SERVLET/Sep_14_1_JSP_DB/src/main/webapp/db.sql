@@ -8,5 +8,15 @@ create table sep14_apple(
 
 insert into sep14_apple values('충주','빨강','단맛',4000,'충주사과!!!!!!');
 insert into sep14_apple values('서울','초록','신맛',4500,'서울사과!!!!!!');
+select * from sep14_apple ;
 
-select * from sep14_apple;
+select * 
+from
+(
+select ROWNUM rn,a_location,a_color,a_flavor,a_price,a_introduce
+from(
+  select * from SEP14_APPLE order by a_price
+	)
+)
+where rn between 5 and 8;
+

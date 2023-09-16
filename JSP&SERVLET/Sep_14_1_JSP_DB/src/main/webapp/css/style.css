@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url("screens/apple.css");
+
 body{
 	background: linear-gradient(to top, #eecda3, #ef629f);
 	margin:0;
@@ -26,24 +28,9 @@ main{
 	display: flex;
 	justify-content:center;
 }
-h1{
+.main-text{
    align-self: center;
    font-size:2.5em;
-}
-.table{
-	width:33%;
-}
-table,th,td,tr {
-  border:solid 1px white;
-  border-collapse: collapse;
-  border-spacing: 0;
-  box-sizing: border-box;
-}
-table{
-    width:100%;
-}
-th,td,tr{
-	width:50%;
 }
 nav{
 	width:100%;

@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 public class AppleController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AppleDBManager adm = AppleDBManager.getInstance();
-		adm.showTable(request);
-		request.setAttribute("cp", "db/apple.jsp");
+	    adm.showTable(request);
+		adm.makeAllPages(request);
+		request.setAttribute("cp","apple/apple.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	}
-
 }
