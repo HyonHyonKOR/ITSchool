@@ -8,16 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/ApplePageController")
-public class ApplePageController extends HttpServlet {
+@WebServlet("/AppleDeleteController")
+public class AppleDeleteController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int p = Integer.parseInt(request.getParameter("page"));
-		AppleDBManager.getInstance().groupApples(p,request);
-		request.setAttribute("cp", "apple/apple.jsp");
+		AppleDBManager.getInstance().deleteApple(request);
+		AppleDBManager.getInstance().groupApples(1, request);
+		request.setAttribute("cp","apple/apple.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
-	}
+		}
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
+
 }

@@ -5,6 +5,7 @@
     flex-direction: column;
     gap:5%;
     align-items:center;
+    position:relative;
 }
 table,th,td,tr {
   border:solid 1px white;
@@ -12,12 +13,70 @@ table,th,td,tr {
   border-spacing: 0;
   box-sizing: border-box;
 }
-caption{
-	text-decoration: none;
+.table a:first-child{
+	align-self:flex-end;
+}
+.table a:first-child i{
+	color:#EECAA2;
 }
 table{
-    width:100%;
+width:100%;
 }
 th,td,tr{
 	width:50%;
+}
+tr:hover{
+	background-color:rgba(0,0,0,0.2);
+}
+.apple-update-button{
+   width:100%;
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+}
+.apple-reg{
+	display:flex;
+	align-items: center;
+	flex-direction:column;
+}
+.appleRegForm{
+	display:flex;
+	flex-direction:column;
+	gap:1px;
+}
+.appleRegForm input{
+	width:100%;
+	border:none;
+	border-bottom:1px solid white;
+	background-color:transparent;
+	color:white;
+}
+.appleRegForm input:hover{
+	background-color:rgba(0,0,0,0.2);
+}
+.appleRegForm input:focus{
+	background-color:rgba(0,0,0,0.2);
+	outline: none;
+}
+.appleRegForm input::placeholder{
+	color:white;
+}
+.appleRegForm textarea{
+	border-color: white;
+	border-radius:8px;
+	height:80px;
+	background-color:transparent;
+	color:white;
+}
+.appleRegForm textarea::placeholder{
+	color:white;
+}
+.appleRegForm button{
+	background-color:transparent;
+	border-radius:8px;
+	border:1px solid white;
+	color:white;
+}
+.appleRegForm button:hover{
+	background-color:rgba(0,0,0,0.2);
 }

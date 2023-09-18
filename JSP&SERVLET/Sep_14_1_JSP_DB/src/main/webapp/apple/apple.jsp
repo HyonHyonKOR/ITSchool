@@ -13,17 +13,18 @@
 	 <table>
       <thead>
       <tr>
-        <a href="AppleRegController">등록</a>
+        <a href="AppleRegController"><i class="fa-solid fa-apple-whole fa-beat fa-lg"></i></a>
         </tr>
         <tr>
           <th>지역</th>
           <th>가격</th>
 	    </tr>
 	    <tbody>
+	   
 		<c:forEach var="apple" begin="0" end="4" items="${apples }">
-			<tr>
+			<tr id="dataTr" onclick="goAppleDetail(`${apple.a_location}`)">
 			   <td>
-			      ${apple.a_location}
+			      ${apple.a_location} 
 			   </td>
 			   <td>
 			      <fmt:formatNumber type="currency" value="${apple.a_price }" />
@@ -33,10 +34,11 @@
 	    </tbody>
 	 </table>
 	  <div class=apple-page__pagenum>
-	          <c:forEach var="p" begin="1" end="${pn}">
+	          <c:forEach var="p" begin="1" end="${pageCount}">
 	      		 <a href="ApplePageController?page=${p }">${p }</a>
 	          </c:forEach>	       
 	 </div>
 	 </div>
+	 ${r }
 </body>
 </html>

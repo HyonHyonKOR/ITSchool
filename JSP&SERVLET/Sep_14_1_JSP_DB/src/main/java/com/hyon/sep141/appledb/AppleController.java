@@ -12,8 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AppleController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AppleDBManager adm = AppleDBManager.getInstance();
-	    adm.showTable(request);
-		adm.makeAllPages(request);
+		adm.groupApples(1, request);
 		request.setAttribute("cp","apple/apple.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

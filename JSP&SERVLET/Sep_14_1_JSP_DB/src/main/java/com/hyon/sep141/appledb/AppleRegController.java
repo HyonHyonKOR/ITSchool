@@ -17,8 +17,7 @@ public class AppleRegController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	AppleDBManager.getInstance().insertTable(request);
-	AppleDBManager.getInstance().showTable(request);
-	AppleDBManager.getInstance().makeAllPages(request);
+	AppleDBManager.getInstance().groupApples(1, request);
 	request.setAttribute("cp", "apple/apple.jsp");
 	request.getRequestDispatcher("index.jsp").forward(request, response);	
 	}
