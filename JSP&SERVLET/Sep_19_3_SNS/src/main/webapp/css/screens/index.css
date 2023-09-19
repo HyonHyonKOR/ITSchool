@@ -1,0 +1,24 @@
+@charset "UTF-8";
+.index-container{
+height:100vh;			  
+display:grid;
+grid-template:"header header header header header" 5fr
+              "nav nav nav nav nav" 2fr
+			  "main main main main aside" 30fr/1fr 1fr 1fr 1fr 1fr;
+}
+.index-header{
+background-color:red;
+grid-area:header;
+}
+.index-main{
+background-color:blue;
+grid-area:main;
+}
+.index-nav{
+background-color:green;
+grid-area:nav;
+}
+.index-aside{
+background-color:purple;
+grid-area:aside;
+}	
