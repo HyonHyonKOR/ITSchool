@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.hyon.sep193.main.DateManager;
+import com.hyon.sep193.member.MemberDAO;
 
 @WebServlet("/JoinController")
 public class JoinController extends HttpServlet {
@@ -16,9 +17,11 @@ public class JoinController extends HttpServlet {
 		DateManager.getCurYear(request);
 		request.getRequestDispatcher("join/join.jsp").forward(request, response);
 	}
-
+  
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		DateManager.getCurYear(request);
+		MemberDAO.getMdao().join(request);
+		request.getRequestDispatcher("join/join.jsp").forward(request, response);
 	}
 
 }

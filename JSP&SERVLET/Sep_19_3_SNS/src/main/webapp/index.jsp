@@ -6,7 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/style.css">
-<script type="text/javascript" src="js/join.js"></script>
+<script type="text/javascript" src="js/ValidCheck.js"></script>
+<script type="text/javascript" src="js/LoginValidCheck.js"></script>
+<script type="text/javascript" src="js/Go.js"></script>
 <title>홈</title>
 </head>
 <body>
@@ -21,8 +23,11 @@
 <main class="index-main">
 </main>
 <aside class="index-aside">
+ <div class="login-screen">
  <jsp:include page="${lp }"></jsp:include>
+ </div>
 </aside>
 </div>
+${r }
 </body>
 </html>

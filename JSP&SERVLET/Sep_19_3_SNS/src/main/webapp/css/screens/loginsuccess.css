@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.login-success{
+	padding-top:1em;
+	display: flex;
+	flex-direction:column;
+	justify-content: space-around;
+	align-items:center;
+	gap:10px;
+}
+.login-success__column{
+	width:183px;
+}
+.login-success__column:first-child {
+	display:flex;
+}
+.login-success__column-photo img{
+	width:64px;
+	height:64px;
+	box-sizing: border-box;
+	border-radius:50%;
+	margin-right:10px;
+}
+.login-success__column-text{
+    display: flex;
+	flex-direction:column;
+	justify-content:center;
+	font-size:1.4rem;
+}
+.login-success__column-text span:nth-child(2){
+    font-size:1rem;
+}
+.login-success__column-welcome{
+	font-size:1.1rem;
+}
+.login-success__column:last-child {
+	margin-top:10px;
+}
+.login-success__btns{
+	width:100%;
+}
+.login-success__btns button{
+  font-size: 0.8rem;
+  width:48%;
+} 

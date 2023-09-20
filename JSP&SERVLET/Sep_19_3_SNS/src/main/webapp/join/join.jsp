@@ -15,6 +15,7 @@
   <body>
     <div class="menu">
       <span>회원가입</span>
+      ${r }
     </div>
     <header>
       <h1>어서오세요!</h1>
@@ -79,7 +80,7 @@
           <span>생년월일</span><br />
           <div>
           <select required name="m_birthYear">
-          	<c:forEach var="y" begin="${cy-100 }" end="${cy}">
+          	<c:forEach var="y" begin="${cy-100 }" end="${cy}" step="1">
 			  <option>${y } </option>
 			</c:forEach>
           </select>년
