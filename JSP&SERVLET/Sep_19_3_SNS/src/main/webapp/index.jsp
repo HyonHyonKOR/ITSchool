@@ -9,7 +9,7 @@
 <script type="text/javascript" src="js/ValidCheck.js"></script>
 <script type="text/javascript" src="js/LoginValidCheck.js"></script>
 <script type="text/javascript" src="js/Go.js"></script>
-<title>홈</title>
+<title>홈페이지</title>
 </head>
 <body>
 <div class="index-container">
@@ -21,10 +21,11 @@
 </ul>
 </nav>
 <main class="index-main">
+<jsp:include page="${cp }"></jsp:include>
 </main>
 <aside class="index-aside">
  <div class="login-screen">
- <jsp:include page="${lp }"></jsp:include>
+ <jsp:include page="${lp}"></jsp:include>
  </div>
 </aside>
 </div>

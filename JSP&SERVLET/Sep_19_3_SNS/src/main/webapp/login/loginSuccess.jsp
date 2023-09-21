@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/Go.js"></script>
 </head>
 <body>
    <div class="login-success">
@@ -23,10 +24,10 @@
    		</span>
    	</div>
    	<div class="login-success__column">
-   		<form class= "login-success__btns" name="lsform">
-   			<button>정보수정</button>
-   			<button>로그아웃</button>
-   		</form>
+   		<form class="login-success__btns">
+   			<button type="button" onclick="goToUpdate();">정보수정</button>
+   			<button onclick="logout();">로그아웃</button>
+   			</form>
    	</div>   
    </div>
 </body>

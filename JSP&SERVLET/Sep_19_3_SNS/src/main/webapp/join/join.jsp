@@ -3,13 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="ko">
   <head>
-    <link rel="stylesheet" href="css/style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" src="js/ValidCheck.js"></script>
-    <script type="text/javascript" src="js/JoinValidCheck.js"></script>
     <title>회원가입</title>
   </head>
   <body>
@@ -98,8 +95,8 @@
         </div>
         <div class="box">
           <span>사진</span><br />
-          <input required name="m_photo" type="file" accept=".jpg" /><br />
-          <span id="size">10mb 이하의 jpg 파일만 가능합니다.</span>
+          <input required name="m_photo" type="file" accept="image/png, image/jpeg, image/gif" /><br />
+          <span id="size">10mb 이하의 .png,.jpeg,.gif 파일만 가능합니다.</span>
         </div>
         <div class="box">
           <button>회원 가입 하기</button>

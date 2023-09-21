@@ -14,8 +14,10 @@ import com.hyon.sep193.member.MemberDAO;
 public class LoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberDAO mdao = MemberDAO.getMdao();
+		if(mdao.loginCheck(request)){
 		mdao.logout(request);
-		request.setAttribute("lp", "login/login.jsp");
+		}
+		request.setAttribute("lp","login/login.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

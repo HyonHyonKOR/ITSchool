@@ -6,6 +6,7 @@ import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -134,6 +135,75 @@ public class MemberDAO {
 			MemberDBManager.close(con, pstmt, null);
 		}
 	}
+	
+	//회원 정보 수정
+		public void update(HttpServletRequest req) {
+			String path =req.getServletContext().getRealPath("img");
+			try {
+				mr = new MultipartRequest(req, path, 10*1024*1024,"UTF-8",new DefaultFileRenamePolicy());
+				//file name 중복 처리!
+				
+				con = MemberDBManager.connect("hyonPool");
+				
+				String m_id = mr.getParameter("m_id");
+				String m_password = mr.getParameter("m_password");
+				String m_name = mr.getParameter("m_name");
+				String m_phonenum = mr.getParameter("m_phonenum");
+				int y = Integer.parseInt(mr.getParameter("m_birthYear"));
+				int m = Integer.parseInt(mr.getParameter("m_birthMonth"));
+				int d = Integer.parseInt(mr.getParameter("m_birthDay"));
+				String m_birthday = String.format("%s%02d%02d", y,m,d);
+				String m_photo = mr.getFilesystemName("m_photo");
+				
+				if(m_photo != null) {
+					m_photo = URLEncoder.encode(m_photo, "UTF-8").replace("+", " ");
+					String sql = "update sns_member set m_password=?, m_name=?, m_phonenum=?,"
+							+ "m_birthday=to_date(?,'YYYYMMDD'),m_photo=? where m_id=?";
+					pstmt=con.prepareStatement(sql); 
+					
+					pstmt.setString(1,m_password);
+					pstmt.setString(2,m_name);
+					pstmt.setString(3,m_phonenum);
+					pstmt.setString(4,m_birthday);
+					pstmt.setString(5,m_photo);
+					pstmt.setString(6,m_id);
+					
+					if(pstmt.executeUpdate()==1) {
+						req.setAttribute("r", "<script>alert('수정 성공');</script>");
+					}
+					else {
+						req.setAttribute("r", "<script>alert('수정 실패');</script>");
+					}
+				}
+				else {
+					String sql = "update sns_member set m_password=?, m_name=?, m_phonenum=?,"
+							+ "m_birthday=to_date(?,'YYYYMMDD') where m_id=?";
+					pstmt=con.prepareStatement(sql); 
+					
+					pstmt.setString(1,m_password);
+					pstmt.setString(2,m_name);
+					pstmt.setString(3,m_phonenum);
+					pstmt.setString(4,m_birthday);
+					pstmt.setString(5,m_id);
+					
+					if(pstmt.executeUpdate()==1) {
+						req.setAttribute("r", "<script>alert('수정 성공');</script>");
+					}
+					else {
+						req.setAttribute("r", "<script>alert('수정 실패 1');</script>");
+					}
+				}
+	     	}catch(Exception e){ 
+				e.printStackTrace();
+				//업로드는 되어 있는 상태
+				//사진 파일 지워줘야
+				File f = new File(path + "/" + mr.getFilesystemName("m_photo"));
+				f.delete();
+				req.setAttribute("r", "<script>alert('수정 실패');</script>");
+			}finally {
+				MemberDBManager.close(con, pstmt, null);
+			}
+		}
 
 	
 }
