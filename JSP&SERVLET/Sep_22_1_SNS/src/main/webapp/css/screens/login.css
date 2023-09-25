@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.login-form-container{
+	display:flex;
+	min-width:220px;
+	height:80%;
+	flex-direction:column;
+	justify-content:space-around;
+	align-items:center;
+	background-color: yellow;
+}
+.login-input-container{
+	display: flex;
+	justify-content: space-between;
+}
+.login-label{
+	align-self: flex-end;
+	margin-right: 10px;
+}
+.btns-set{
+  width:85%;
+}
+.btns-set button{
+  width:45%;
+  padding:0.2rem 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  cursor:pointer;
+}
+.btns-set button:first-child {
+  margin-right:5%;
+}
