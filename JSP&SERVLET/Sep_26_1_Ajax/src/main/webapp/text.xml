@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sep26_fruit>
+	<fruit>
+		<f_name>사과</f_name>
+		<f_price>3000</f_price>
+	</fruit>
+		<fruit>
+		<f_name>사과</f_name>
+		<f_price>3000</f_price>
+	</fruit>
+		<fruit>
+		<f_name>사과</f_name>
+		<f_price>3000</f_price>
+	</fruit>
+		<fruit>
+		<f_name>사과</f_name>
+		<f_price>3000</f_price>
+	</fruit>
+</sep26_fruit>
