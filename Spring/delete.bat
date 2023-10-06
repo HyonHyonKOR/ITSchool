@@ -1,0 +1,1 @@
+rmdir /s C:\Users\gram\Desktop\programming\IT_School\spring\.metadata\.plugins\org.eclipse.datatools.sqltools.result
