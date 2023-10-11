@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+   $(function(){
+	   
+	
+	   
+/* 	   $('td').each((i,element)=>{
+		   
+		   
+		   switch(i){
+		   case 0 : 		   
+			   $(element).css('color','green');
+			   $(element).css('background-color','red'); 
+			   break;
+		   case 1 :
+			   $(element).css('color','yellow');
+			   $(element).css('background-color','blue'); 
+			   break;
+		   case 2 :
+			   $(element).css('color','pink');
+			   $(element).css('background-color','teal'); 
+			   break;
+		   }
+		   
+		   });
+		    */
+			  
+		    
+		   let arrobj = [
+			   {
+				  color:'green',
+				  bgc: 'red'
+				   
+			   },
+               { 
+				   color:'yellow',
+				   bgc: 'blue'
+				   
+			   },
+               {
+				   color:'pink',
+				   bgc: 'teal'
+				   
+			   },   
+		   ];
+		    
+		   $('td').each((i,t)=>{
+			   $(t).css('color', arrobj[i].color);
+			   $(t).css('background-color', arrobj[i].bgc); 
+		   }); 
+		    
+		   // 이미지파일 최소 7장 이상 
+		   // 확장자 같아야! 
+		   // 프로젝트에 넣기 
+	       // setInterval()을 이용해서
+		   // 처음시작사진 ~ 끝사진까지 한장씩 넘겨가면서 보여주기
+           // 마지막사진 출력하면 => 다시 처음부터 시작하는...!
+           
+           
+           let images = [
+        	   {
+        		   src:'img/1.png'
+        	   },
+        	   {
+        		   src:'img/2.png'
+        	   },
+        	   {
+        		   src:'img/3.png'
+        	   },
+        	   {
+        		   src:'img/4.png'
+        	   },
+        	   {
+        		   src:'img/5.png'
+        	   },
+        	   {
+        		   src:'img/6.png'
+        	   },
+        	   {
+        		   src:'img/7.png'
+        	   },
+           ]
+           
+           let i = 0;
+           setInterval(
+			()=>{
+			  $('img').attr('src', images[(i++) % images.length].src);
+			}   
+		   , 1000); 
+           
+   
+   });
+</script>
+</head>
+<body>
+   <table>
+      <tr>
+         <td>ㅋㅋㅋㅋㅋ</td>
+      </tr>
+      <tr>
+         <td>ㅎㅎㅎㅎㅎ</td>
+      </tr>
+      <tr>
+         <td>ㅠㅠㅠㅠㅠ</td>
+      </tr>
+   
+   </table>
+   
+   
+   <img src="img/1.png"/>
+   
+</body>
+</html>
