@@ -1,0 +1,1 @@
+select * from OCT12_FRUIT;
