@@ -20,4 +20,21 @@ public class ErrorDAO {
 		}
 	}
 	
+	public Errors getJSON(HttpServletRequest req) {
+		return new Errors(ss.getMapper(ErrorMapper.class).getAllErrors());
+	}
+	
+	
+	public void getSelectedErrors(Error error, HttpServletRequest req) {
+		try {
+		req.setAttribute("errors", ss.getMapper(ErrorMapper.class).getSelectedErrors(error));
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	public Errors getSelectedJSON(Error error, HttpServletRequest req) {
+		return new Errors(ss.getMapper(ErrorMapper.class).getSelectedErrors(error));
+	}
+	
 }

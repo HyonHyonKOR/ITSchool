@@ -4,4 +4,8 @@
 <select id="getAllErrors" resultType="com.hyon.oct131.error.Error">
 select * from oct13_error
 </select>
+<select id="getSelectedErrors" resultType="com.hyon.oct131.error.Error"
+parameterType="com.hyon.oct131.error.Error">
+select * from oct13_error where e_what like '%'||#{e_what}||'%'
+</select>
 </mapper>
